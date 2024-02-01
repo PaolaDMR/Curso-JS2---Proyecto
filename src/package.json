@@ -1,0 +1,20 @@
+{
+  "name": "forkify",
+  "version": "1.0.0",
+  "description": "JavaScript2-Proyecto",
+  "source": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "Paola Martinez",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.11.0",
+    "parcel": "^2.11.0"
+  },
+  "dependencies": {
+    "fractional": "^1.0.0",
+    "node-fetch": "^3.3.2"
+  }
+}
