@@ -133,6 +133,40 @@ class RecipeView {
     #clear() {
         this.#parentElement.innerHTML = ''; // Limpia el contenido del #parentElement
       }
+
+      renderError(message = this._errorMessage) {
+        this.#clear();
+        
+        const markup = `
+          <div class="error">
+            <div>
+              <svg>
+                <use href="${icons}#icon-alert-triangle"></use>
+              </svg>
+            </div>
+            <p>${message}</p>
+          </div>
+        `;
+        
+        this._parentElement.insertAdjacentHTML('afterbegin', markup);
+      }
+  
+      renderMessage(message = this._message) {
+        this.#clear();
+    
+        const markup = `
+          <div class="message">
+            <div>
+              <svg>
+                <use href="${icons}#icon-smile"></use>
+              </svg>
+            </div>
+            <p>${message}</p>
+          </div>
+        `;
+    
+        this._parentElement.insertAdjacentHTML('afterbegin', markup);
+      }
   }
 
   export default new RecipeView();
