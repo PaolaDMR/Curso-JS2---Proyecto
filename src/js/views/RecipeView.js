@@ -5,10 +5,13 @@ const { Fraction } = require('fractional');
 class RecipeView {
     #parentElement = recipeContainer;
     #data;
+    _errorMessage = 'We could not find that recipe. Please try another one!';
+    _successMessage = 'Recipe successfully!';
   
     render(data) {
       this.#data = data;
       const markup = this.#generateMarkup();
+      
       // Lógica para insertar el markup en el #parentElement
     //   this.#parentElement.innerHTML = markup;
      this.#parentElement.insertAdjacentHTML('afterbegin', markup);
@@ -148,7 +151,7 @@ class RecipeView {
           </div>
         `;
         
-        this._parentElement.insertAdjacentHTML('afterbegin', markup);
+        this.#parentElement.insertAdjacentHTML('afterbegin', markup);
       }
   
       renderMessage(message = this._message) {
@@ -165,7 +168,7 @@ class RecipeView {
           </div>
         `;
     
-        this._parentElement.insertAdjacentHTML('afterbegin', markup);
+        this.#parentElement.insertAdjacentHTML('afterbegin', markup);
       }
   }
 
