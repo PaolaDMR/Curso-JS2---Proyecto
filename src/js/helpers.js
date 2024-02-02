@@ -1,3 +1,5 @@
+import { TIMEOUT_SEC } from './config';
+
 const timeout = function (s) {
     return new Promise(function (_, reject) {
       setTimeout(function () {
@@ -33,4 +35,4 @@ async function getJSON(url) {
   }
   
   // Exporta la función para que pueda ser utilizada en otros archivos
-  module.exports = getJSON;
+  export { getJSON };

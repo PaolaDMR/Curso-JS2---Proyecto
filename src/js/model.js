@@ -1,11 +1,16 @@
 // Importar API
-import {API_URL} from './config';
+import {API_URL, RES_PER_PAGE} from './config';
 import { getJSON } from './helpers';
 
 // Define el objeto state con un objeto recipe vacío
 const state = {
-    recipe: {}
-  };
+  search: {
+    query: '',
+    results: [],
+    page: 1, 
+    resultsPerPage: RES_PER_PAGE,
+  },
+};
   
   // Exportar el objeto state
   export { state };
@@ -37,7 +42,8 @@ const state = {
 
       // d. En el console.log, también registra a recipe como objeto de state.
       console.log('Receta cargada con éxito:', state.recipe, id);
-    
+
+        loadSearchResults(`pizza`);
     
       } catch (error) {
         // a. Envía a una alerta el error.
@@ -47,7 +53,7 @@ const state = {
       }
   }
 
-  export async function loadSearchResults(query) {
+  async function loadSearchResults(query) {
     try {
       const url = `${API_URL}/?search=${query}`;
       const data = await getJSON(url);
@@ -61,12 +67,27 @@ const state = {
           image: rec.image_url,
       }));
 
-      console.log(state.search.results);
-      // return state.search.results;
+    // Imprime los resultados en la consola
+    // console.log('Resultados:', state.search.results);
+
+      return state.search.results;
     } catch (error) {
       throw error; 
     }
   }
+
+
+  const getSearchResultsPage = (page = state.search.page) => {
+    state.search.page = page;
   
+    // variables de start, end
+    const start = (page - 1) * state.search.resultsPerPage;
+    const end = page * state.search.resultsPerPage;
+  
+    return state.search.results.slice(start, end);
+  };
+
+  // loadSearchResults('pizza');
+
   // Exporta la función loadRecipe
-  export { loadRecipe };
+  export { loadRecipe, loadSearchResults, getSearchResultsPage };

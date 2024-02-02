@@ -1,20 +1,21 @@
 const recipeContainer = document.querySelector('.recipe');
 import icons from '../../img/icons.svg';
+import View from './View';
 const { Fraction } = require('fractional');
 
-class RecipeView {
-    #parentElement = recipeContainer;
-    #data;
+class RecipeView extends View{
+    _parentElement = recipeContainer;
+    _data;
     _errorMessage = 'We could not find that recipe. Please try another one!';
     _successMessage = 'Recipe successfully!';
   
     render(data) {
-      this.#data = data;
-      const markup = this.#generateMarkup();
+      this._data = data;
+      const markup = this._generateMarkup();
       
-      // Lógica para insertar el markup en el #parentElement
-    //   this.#parentElement.innerHTML = markup;
-     this.#parentElement.insertAdjacentHTML('afterbegin', markup);
+      // Lógica para insertar el markup en el _parentElement
+    //   this._parentElement.innerHTML = markup;
+     this._parentElement.insertAdjacentHTML('afterbegin', markup);
     }
 
     // Método público para renderizar el spinner
@@ -26,8 +27,8 @@ class RecipeView {
             </svg>
         </div>`;
 
-        this.#clear(); // Limpia el #parentElement antes de renderizar el spinner
-        this.#parentElement.insertAdjacentHTML('afterbegin', markup);
+        this._clear(); // Limpia el #parentElement antes de renderizar el spinner
+        this._parentElement.insertAdjacentHTML('afterbegin', markup);
     }
 
     addHandlerRender(handler){
@@ -43,12 +44,12 @@ class RecipeView {
       });
     }
   
-    #generateMarkup() {
+    _generateMarkup() {
       return `
         <figure class="recipe__fig">
-          <img src="${this.#data.image_url}" alt="Tomato" class="recipe__img" />
+          <img src="${this._data.image_url}" alt="Tomato" class="recipe__img" />
           <h1 class="recipe__title">
-            <span>${this.#data.title}</span>
+            <span>${this._data.title}</span>
           </h1>
         </figure>
   
@@ -57,25 +58,25 @@ class RecipeView {
             <svg class="recipe__info-icon">
               <use href="../img/icons.svg#icon-clock"></use>
             </svg>
-            <span class="recipe__info-data recipe__info-data--minutes">${this.#data.cookTime}</span>
+            <span class="recipe__info-data recipe__info-data--minutes">${this._data.cookTime}</span>
             <span class="recipe__info-text">minutes</span>
           </div>
           <div class="recipe__info">
             <svg class="recipe__info-icon">
-              <use href="${this.#data.icons}#icon-users"></use>
+              <use href="${this._data.icons}#icon-users"></use>
             </svg>
-            <span class="recipe__info-data recipe__info-data--people">${this.#data.servings}</span>
+            <span class="recipe__info-data recipe__info-data--people">${this._data.servings}</span>
             <span class="recipe__info-text">servings</span>
   
             <div class="recipe__info-buttons">
               <button class="btn--tiny btn--increase-servings">
                 <svg>
-                <use href="${this.#data.icons}#icon-minus-circle"></use>
+                <use href="${this._data.icons}#icon-minus-circle"></use>
                 </svg>
               </button>
               <button class="btn--tiny btn--increase-servings">
                 <svg>
-                <use href="${this.#data.icons}#icon-plus-circle"></use>
+                <use href="${this._data.icons}#icon-plus-circle"></use>
                 </svg>
               </button>
             </div>
@@ -83,12 +84,12 @@ class RecipeView {
   
           <div class="recipe__user-generated">
             <svg>
-              <use href="${this.#data.icons}#icon-user"></use>
+              <use href="${this._data.icons}#icon-user"></use>
             </svg>
           </div>
           <button class="btn--round">
             <svg class="">
-              <use href="${this.#data.icons}#icon-bookmark-fill"></use>
+              <use href="${this._data.icons}#icon-bookmark-fill"></use>
             </svg>
           </button>
         </div>
@@ -96,7 +97,7 @@ class RecipeView {
         <div class="recipe__ingredients">
         <h2 class="heading--2">Recipe ingredients</h2>
         <ul class="recipe__ingredient-list">
-        ${this.#data.ingredients ? this.#data.ingredients.map(ing => {
+        ${this._data.ingredients ? this._data.ingredients.map(ing => {
             const formattedQuantity = ing.quantity
                 ? new Fraction(ing.quantity).toString()
                 : '';
@@ -104,7 +105,7 @@ class RecipeView {
             return `
                 <li class="recipe__ingredient">
                 <svg class="recipe__icon">
-                    <use href="${this.#data.icons}icon-check"></use>
+                    <use href="${this._data.icons}icon-check"></use>
                 </svg>
                 <div class="recipe__quantity">${formattedQuantity}</div>
                 <div class="recipe__description">
@@ -121,24 +122,24 @@ class RecipeView {
           <h2 class="heading--2">How to cook it</h2>
           <p class="recipe__directions-text">
             This recipe was carefully designed and tested by
-            <span class="recipe__publisher">${this.#data.publisher}</span>. Please check out
+            <span class="recipe__publisher">${this._data.publisher}</span>. Please check out
             directions at their website.
           </p>
-          <a class="btn--small recipe__btn" href="${this.#data.sourceUrl}" target="_blank">
+          <a class="btn--small recipe__btn" href="${this._data.sourceUrl}" target="_blank">
             <span>Directions</span>
             <svg class="search__icon">
-              <use href="${this.#data.icons}#icon-arrow-right"></use>
+              <use href="${this._data.icons}#icon-arrow-right"></use>
             </svg>
           </a>
         </div>`;
     }
 
-    #clear() {
-        this.#parentElement.innerHTML = ''; // Limpia el contenido del #parentElement
+    _clear() {
+        this._parentElement.innerHTML = ''; // Limpia el contenido del #parentElement
       }
 
       renderError(message = this._errorMessage) {
-        this.#clear();
+        this._clear();
         
         const markup = `
           <div class="error">
@@ -151,11 +152,11 @@ class RecipeView {
           </div>
         `;
         
-        this.#parentElement.insertAdjacentHTML('afterbegin', markup);
+        this._parentElement.insertAdjacentHTML('afterbegin', markup);
       }
   
       renderMessage(message = this._message) {
-        this.#clear();
+        this._clear();
     
         const markup = `
           <div class="message">
@@ -168,7 +169,7 @@ class RecipeView {
           </div>
         `;
     
-        this.#parentElement.insertAdjacentHTML('afterbegin', markup);
+        this._parentElement.insertAdjacentHTML('afterbegin', markup);
       }
   }
 

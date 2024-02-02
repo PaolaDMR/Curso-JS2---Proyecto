@@ -1,6 +1,8 @@
 import * as model from './model.js';
 import RecipeView from "./views/RecipeView.js";
-
+import SearchView from "./views/SearchView.js";
+import resultsView from './views/ResultsView.js';
+import paginationView from './views/paginationView';
 // function renderSpinner(parentEl) {
 //   const markup = `
 //   <div class="spinner">
@@ -61,11 +63,53 @@ async function controlRecipes(){
     }
 };
 
-// function init(){
-//   RecipeView.addHandlerRender.(controlRecipes);
-// }
+async function controlSearchResults() {
+  try {
+    // Invoca a la función model.loadsearchResults 
+    const searchQuery = SearchView.getQuery();
 
-// init();
+    if (!searchQuery) {
+      return;
+    }
+
+    resultsView.renderSpinner();
+
+    const searchResults = await model.loadSearchResults(searchQuery);
+
+
+    resultsView.render(model.getSearchResultsPage());
+    paginationView.render(model.state.search);
+    // Imprime en la consola el resultado
+    console.log("Resultado de la búsqueda:", searchResults);
+
+
+  } catch (error) {
+    // Manejo de errores
+    console.error("Error en la búsqueda:", error.message);
+  }
+}
+
+
+async function controlPagination(goToPage) {
+  try {
+
+    model.getSearchResultsPage(goToPage);
+    resultsView.render(model.getSearchResultsPage());
+    paginationView.render(model.state.search);
+
+  } catch (err) {
+    console.error(err);
+  }
+}
+// controlSearchResults("pizza");
+
+function init(){
+  RecipeView.addHandlerRender(controlRecipes);
+  SearchView.addHandlerSearch(controlSearchResults);
+  paginationView.addHandlerClick(controlPagination);
+}
+
+init();
 
 // controlRecipes();
 
