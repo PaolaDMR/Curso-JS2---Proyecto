@@ -1,5 +1,5 @@
-import { recipeContainer } from './controller';
-import icons from '../img/icons.svg';
+const recipeContainer = document.querySelector('.recipe');
+import icons from '../../img/icons.svg';
 const { Fraction } = require('fractional');
 
 class RecipeView {
@@ -26,11 +26,24 @@ class RecipeView {
         this.#clear(); // Limpia el #parentElement antes de renderizar el spinner
         this.#parentElement.insertAdjacentHTML('afterbegin', markup);
     }
+
+    addHandlerRender(handler){
+      // Arreglo de eventos
+      const eventos = ['hashchange', 'load'];
+
+      // Aplicar forEach al arreglo de eventos
+      eventos.forEach(ev => {
+        // Agregar el evento con addEventListener
+        window.addEventListener(ev, (event) => {
+          handler(event)
+        });
+      });
+    }
   
     #generateMarkup() {
       return `
         <figure class="recipe__fig">
-          <img src="${this.#data.image}" alt="Tomato" class="recipe__img" />
+          <img src="${this.#data.image_url}" alt="Tomato" class="recipe__img" />
           <h1 class="recipe__title">
             <span>${this.#data.title}</span>
           </h1>
@@ -80,7 +93,7 @@ class RecipeView {
         <div class="recipe__ingredients">
         <h2 class="heading--2">Recipe ingredients</h2>
         <ul class="recipe__ingredient-list">
-            ${this.#data.ingredients.map(ing => {
+        ${this.#data.ingredients ? this.#data.ingredients.map(ing => {
             const formattedQuantity = ing.quantity
                 ? new Fraction(ing.quantity).toString()
                 : '';
@@ -97,7 +110,7 @@ class RecipeView {
                 </div>
                 </li>
             `;
-            }).join('')}
+            }).join(''): ''}
         </ul>
         </div>
   

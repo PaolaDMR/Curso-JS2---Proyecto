@@ -1,14 +1,5 @@
 import * as model from './model.js';
 import RecipeView from "./views/RecipeView.js";
-const recipeContainer = document.querySelector('.recipe');
-
-const timeout = function (s) {
-  return new Promise(function (_, reject) {
-    setTimeout(function () {
-      reject(new Error(`Request took too long! Timeout after ${s} second`));
-    }, s * 1000);
-  });
-};
 
 // function renderSpinner(parentEl) {
 //   const markup = `
@@ -22,7 +13,7 @@ const timeout = function (s) {
 //   parentEl.insertAdjacentHTML('afterbegin', markup);
 // }
 
-async function controlRecipes(ev){
+async function controlRecipes(){
 
    // Declarar variable 
     var id = window.location.hash;
@@ -70,7 +61,11 @@ async function controlRecipes(ev){
     }
 };
 
+// function init(){
+//   RecipeView.addHandlerRender.(controlRecipes);
+// }
 
+// init();
 
 // controlRecipes();
 
@@ -79,16 +74,7 @@ async function controlRecipes(ev){
 
 // window.addEventListener('load', controlRecipes);
 
-// Arreglo de eventos
-const eventos = ['hashchange', 'load'];
 
-// Aplicar forEach al arreglo de eventos
-eventos.forEach(ev => {
-  // Agregar el evento con addEventListener
-  window.addEventListener(ev, (ev) => {
-    controlRecipes(ev); // Llamada a la función del controlador controlRecipes
-  });
-});
 
 // https://forkify-api.herokuapp.com/v2
 

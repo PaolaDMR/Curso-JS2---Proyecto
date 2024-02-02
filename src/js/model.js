@@ -1,3 +1,7 @@
+// Importar API
+import {API_URL} from './config';
+import { getJSON } from './helpers';
+
 // Define el objeto state con un objeto recipe vacío
 const state = {
     recipe: {}
@@ -11,13 +15,22 @@ const state = {
     try {
       // Hacer la llamada a la API para obtener la receta
 
-      const url = `https://forkify-api.herokuapp.com/api/v2/recipes/${id}`;
+      const url = `${API_URL}/${id}`;
       
-      // a. La declaración de res.
-      const response = await fetch(url); 
+      // // a. La declaración de res.
+      // const response = await fetch(url); 
+
+      // // Validacion ok
+      // if (!response.ok) {
+      //   throw new Error(`Error al obtener datos: ${response.status} ${response.statusText}`);
+      // }
+
+      // const data = await response.json();
+
+      const data = await getJSON(url);
     
     // b. Declara como const el objeto recipe.
-    const { recipe } = await response.json();
+    const { recipe } = data.data;
 
     // c. Antepón el objeto state al recipe desestructurado.
     state.recipe = recipe;
@@ -26,10 +39,11 @@ const state = {
     console.log('Receta cargada con éxito:', state.recipe, id);
   
   
-} catch (error) {
+  } catch (error) {
     // a. Envía a una alerta el error.
-    alert(`Error al cargar la receta: ${error.message}`);
-    console.error('Error al cargar la receta:', error.message);
+    // alert(`Error al cargar la receta: ${error.message}`);
+    // console.error('Error al cargar la receta:', error.message);
+     console.log(`${error.message} 💥💥💥💥`);
   }
   }
   
