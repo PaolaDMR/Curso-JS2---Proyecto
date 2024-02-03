@@ -1,4 +1,4 @@
-6348
+6349
 130C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\node_modules\@parcel\config-default\test\config.test.js133513707729569778 0
 115C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\node_modules\@parcel\graph\lib\BitSet.js133513707732361737 0
 107C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\node_modules\type-fest\readme.md133513707807977539 0
@@ -43,7 +43,7 @@
 100C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\node_modules\cli-progress133513893209595714 1
 112C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\node_modules\css-what\lib\es\index.js133513707788610923 0
 110C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\node_modules\mdn-data\css\readme.md133513707799526237 0
-79C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\dist133513895496742506 1
+79C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\dist133513953445754853 1
 109C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\node_modules\string-width\index.js133513707805666287 0
 128C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\node_modules\caniuse-lite\data\features\selectlist.js133513707778545603 0
 98C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\node_modules\ansi-regex133513893176602165 1
@@ -2273,7 +2273,7 @@
 106C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\node_modules\micromatch\LICENSE133513707799640572 0
 111C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\node_modules\micromatch\package.json133513707799674836 0
 105C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\node_modules\mdn-data\index.js133513707799600962 0
-97C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\dist\logo.b82d6c7c.png133513892358587777 0
+97C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\dist\logo.b82d6c7c.png133513953442630276 0
 113C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\node_modules\htmlnano\lib\htmlnano.mjs133513707795271028 0
 101C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\node_modules\mdn-data\l10n133513893270124399 1
 117C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\node_modules\chrome-trace-event\CHANGES.md133513707782661811 0
@@ -4189,6 +4189,7 @@
 107C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\node_modules\braces\lib\parse.js133513707772967346 0
 143C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\node_modules\@swc\helpers\_\_class_apply_descriptor_set\package.json133513707768206579 0
 119C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\node_modules\caniuse-lite\data\regions\BO.js133513707780321619 0
+95C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\dist\index.5ef99e5e.133513953444704376 0
 119C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\node_modules\@parcel\reporter-dev-server\lib133513893136865605 1
 119C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\node_modules\caniuse-lite\data\regions\BT.js133513707780351549 0
 119C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\node_modules\caniuse-lite\data\regions\BY.js133513707780371501 0
@@ -6340,10 +6341,10 @@
 88C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\img\icons.svg133513707726643587 0
 121C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\dist\CURSO JAVASCRIPT 2 - Proyecto.3464ddca.js133513892358412250 0
 98C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\dist\icons.c14567a0.svg133513895495585190 0
-98C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\dist\icons.c78699a6.svg133513892358432210 0
-97C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\dist\index.850bd9e5.js133513892358510083 0
-101C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\dist\index.850bd9e5.js.map133513892358520986 0
-98C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\dist\index.8d8029cf.css133513892358530951 0
-102C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\dist\index.8d8029cf.css.map133513892358540938 0
+98C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\dist\icons.c78699a6.svg133513953445734894 0
+97C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\dist\index.850bd9e5.js133513953444983665 0
+101C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\dist\index.850bd9e5.js.map133513953445034327 0
+98C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\dist\index.8d8029cf.css133513953442608931 0
+102C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\dist\index.8d8029cf.css.map133513953442756887 0
 95C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\dist\index.fd704584.133513895478914330 0
-90C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\dist\index.html133513895496666318 0
+90C:\Users\mtypm01\Documents\1 - JS\FINAL PARA GITHUB\Curso-JS2-Proyecto\src\dist\index.html133513953442621311 0
